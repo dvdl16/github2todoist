@@ -1,5 +1,19 @@
+import * as crypto from "crypto";
+
+const verify_signature = (req: Request, webhookSecret: string) => {
+  const signature = crypto
+    .createHmac("sha256", webhookSecret)
+    .update(JSON.stringify(req.body))
+    .digest("hex");
+  return `sha256=${signature}` === req.headers.get("x-hub-signature-256");
+};
+
 export default {
   async fetch(request: Request, env: any, ctx: any) {
+    if (!verify_signature(request, env.GITHUB_WEBHOOK_SECRET)) {
+      return new Response('Unauthorized', {status: 401});
+    }
+
     const payload: any = await request.json();  // The payload is sent as JSON
 
     const todoistTask = {

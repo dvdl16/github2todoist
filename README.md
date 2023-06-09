@@ -11,6 +11,7 @@ npm install -g wrangler
 wrangler login
 wrangler init --from-dash github2todoist
 wrangler secret put TODOIST_API_KEY
+wrangler secret put GITHUB_WEBHOOK_SECRET
 ```
 
 Deploy with
