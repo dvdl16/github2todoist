@@ -1,6 +1,6 @@
 const verify_signature = async (req: Request, webhookSecret: string) => {
   const encoder = new TextEncoder();
-  const reqBody = await req.text();
+  const reqBody = await req.clone().text();
   const key = await crypto.subtle.importKey(
       "raw", 
       encoder.encode(webhookSecret),
