@@ -23,6 +23,10 @@ export default {
 
     const payload: any = await request.json();  // The payload is sent as JSON
 
+    if (payload.action !== "opened") {
+      return new Response('Payload processed successfully', {status: 200});
+    }
+
     const todoistTask = {
       content: `**#${payload.issue.number}**: ${payload.issue.title}`,
       description: 
@@ -49,6 +53,6 @@ export default {
       return todoistResponse
     }
 
-    return new Response('Todoist task created successfully');
+    return new Response('Todoist task created successfully', {status: 201});
   },
 };
