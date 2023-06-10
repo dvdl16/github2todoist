@@ -1,11 +1,18 @@
-import * as crypto from "crypto";
+const verify_signature = async (req: Request, webhookSecret: string) => {
+  const encoder = new TextEncoder();
+  const reqBody = await req.text();
+  const key = await crypto.subtle.importKey(
+      "raw", 
+      encoder.encode(webhookSecret),
+      {name: "HMAC", hash: {name: "SHA-256"}},
+      false,
+      ["sign"]
+  );
 
-const verify_signature = (req: Request, webhookSecret: string) => {
-  const signature = crypto
-    .createHmac("sha256", webhookSecret)
-    .update(JSON.stringify(req.body))
-    .digest("hex");
-  return `sha256=${signature}` === req.headers.get("x-hub-signature-256");
+  const signature = await crypto.subtle.sign("HMAC", key, encoder.encode(reqBody));
+  const hexSignature = Array.prototype.map.call(new Uint8Array(signature), x => ('00' + x.toString(16)).slice(-2)).join('');
+  
+  return `sha256=${hexSignature}` === req.headers.get("x-hub-signature-256");
 };
 
 export default {
