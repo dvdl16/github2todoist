@@ -19,6 +19,18 @@ Deploy with
 wrangler deploy
 ```
 
+## Development
+
+Clone the repository, then run:
+```shell
+npm install
+```
+
+To update `wrangler`:
+```shell
+npm install wrangler
+```
+
 ## Deployment
 
 There is a github action that will deploy the latest version to Cloufdflare
