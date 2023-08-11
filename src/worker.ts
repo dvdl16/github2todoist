@@ -23,7 +23,7 @@ export default {
 
     const payload: any = await request.json();  // The payload is sent as JSON
 
-    if (payload.action !== "opened") {
+    if (payload.action !== "assigned") {
       return new Response('Payload processed successfully', {status: 200});
     }
 
