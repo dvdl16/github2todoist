@@ -28,7 +28,7 @@ export default {
     }
 
     const todoistTask = {
-      content: `**#${payload.issue.number}**: ${payload.issue.title}`,
+      content: `#${payload.issue.number}: ${payload.issue.title}`, // eg. "#69: Fix this issue"
       description: 
       `*Issue URL*: ${payload.issue.html_url}
       *Repository*: ${payload.issue.repository_url}
