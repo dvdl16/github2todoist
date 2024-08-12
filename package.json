@@ -12,6 +12,6 @@
     "wrangler": "^3.68.0"
   },
   "dependencies": {
-    "@types/node": "^22.1.0"
+    "@types/node": "^22.2.0"
   }
 }
