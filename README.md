@@ -33,4 +33,4 @@ npm install wrangler
 
 ## Deployment
 
-There is a github action that will deploy the latest version to Cloufdflare
+There is a github action that will deploy the latest version to Cloudflare
