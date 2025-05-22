@@ -2,7 +2,13 @@
 A simple Cloufdflare Worker endpoint that creates newly assigned Github issues in Todoist
 
 
-## Clouflare
+## How to use on Github
+
+![image](https://github.com/user-attachments/assets/70b9ad46-689c-47ba-bbf1-3b84cc3a36b2)
+
+
+## Development
+### Clouflare
 
 This project was initialised with these commands:
 
@@ -19,7 +25,7 @@ Deploy with
 wrangler deploy
 ```
 
-## Development
+### Local Development setup
 
 Clone the repository, then run:
 ```shell
@@ -31,6 +37,6 @@ To update `wrangler`:
 npm install wrangler
 ```
 
-## Deployment
+### Deployment
 
 There is a github action that will deploy the latest version to Cloudflare
