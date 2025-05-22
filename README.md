@@ -4,7 +4,8 @@ A simple Cloufdflare Worker endpoint that creates newly assigned Github issues i
 
 ## How to use on Github
 
-![image](https://github.com/user-attachments/assets/70b9ad46-689c-47ba-bbf1-3b84cc3a36b2)
+![image](https://github.com/user-attachments/assets/2fdfd0aa-7c1f-4cb9-bd8b-459379cba693)
+
 
 
 ## Development
