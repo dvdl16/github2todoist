@@ -27,16 +27,25 @@ export default {
       return new Response('Payload processed successfully', {status: 200});
     }
 
-    const todoistTask = {
+    const todoistTask: {
+      content: string;
+      description: string;
+      priority: number;
+      due_date?: string;
+    } = {
       content: `#${payload.issue.number}: ${payload.issue.title}`, // eg. "#69: Fix this issue"
-      description: 
-      `*Issue URL*: ${payload.issue.html_url}
+      description:
+        `*Issue URL*: ${payload.issue.html_url}
       *Repository*: ${payload.issue.repository_url}
       *Sender*: ${payload.sender.login}
       `,
       priority: 4,
       // project_id: x
     };
+
+    if (payload.due_date) {
+      todoistTask.due_date = payload.due_date;
+    }
 
     const init = {
       method: 'POST',
