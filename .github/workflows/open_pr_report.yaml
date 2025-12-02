@@ -12,10 +12,10 @@ jobs:
       run: |
         pr_count=$(curl -s https://api.github.com/repos/dvdl16/github2todoist/pulls | jq length)
         acceptable="3"
-        status="down"
+        status="false"
         msg="More%20than%203%20PRs%20are%20open"
         if (( $(echo "$pr_count < $acceptable" | bc -l) )); then
-           status="up"
+           status="true"
            msg="OK"
         fi
-        curl -s GET "${{ secrets.UPTIME_KUMA_URL }}?status=$status&ping=$pr_count&msg=$msg"
+        curl -X POST -H "Authorization: Bearer ${{ secrets.UPTIME_TOKEN }}" "${{ secrets.UPTIME_KUMA_URL }}?success=$status&error=$msg&duration=${pr_count}ms"
