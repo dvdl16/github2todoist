@@ -56,7 +56,7 @@ export default {
       body: JSON.stringify(todoistTask),
     };
 
-    const todoistResponse = await fetch('https://api.todoist.com/rest/v2/tasks', init);
+    const todoistResponse = await fetch('https://api.todoist.com/api/v1/tasks', init);
 
     if (!todoistResponse.ok) {
       return todoistResponse
