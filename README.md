@@ -6,6 +6,9 @@ A simple Cloufdflare Worker endpoint that creates newly assigned Github issues i
 
 ![image](https://github.com/user-attachments/assets/2fdfd0aa-7c1f-4cb9-bd8b-459379cba693)
 
+## How to use in a Frappe Webhook
+
+<img width="1149" height="1258" alt="image" src="https://github.com/user-attachments/assets/f32142c5-be0d-4203-8d54-c01d5d9f950a" />
 
 
 ## Development
@@ -41,3 +44,5 @@ npm install wrangler
 ### Deployment
 
 There is a github action that will deploy the latest version to Cloudflare
+
+
