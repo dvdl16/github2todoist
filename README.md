@@ -41,6 +41,15 @@ To update `wrangler`:
 npm install wrangler
 ```
 
+To update dependencies
+
+```shell
+npx npm-check-updates
+npx npm-check-updates -u
+
+npm install
+```
+
 ### Deployment
 
 There is a github action that will deploy the latest version to Cloudflare
