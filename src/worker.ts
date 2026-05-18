@@ -33,7 +33,7 @@ export default {
       priority: number;
       due_date?: string;
     } = {
-      content: `#${payload.issue.number}: ${payload.issue.title}`, // eg. "#69: Fix this issue"
+      content: `${payload.issue.number}: ${payload.issue.title}`, // eg. "69: Fix this issue"
       description:
         `*Issue URL*: ${payload.issue.html_url}
       *Repository*: ${payload.issue.repository_url}
