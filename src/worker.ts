@@ -31,7 +31,7 @@ export default {
       content: string;
       description: string;
       priority: number;
-      due_date?: string;
+      due_string?: string;
     } = {
       content: `${payload.issue.number}: ${payload.issue.title}`, // eg. "69: Fix this issue"
       description:
@@ -44,7 +44,7 @@ export default {
     };
 
     if (payload.due_date) {
-      todoistTask.due_date = payload.due_date;
+      todoistTask.due_string = payload.due_date;
     }
 
     const init = {
