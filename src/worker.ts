@@ -43,8 +43,8 @@ export default {
       // project_id: x
     };
 
-    if (payload.due_date) {
-      todoistTask.due_string = payload.due_date;
+    if (payload.issue.due_date) {
+      todoistTask.due_string = payload.issue.due_date;
     }
 
     const init = {
